@@ -3,7 +3,7 @@
 
 from odoo import fields, models
 
-class ProductPricing(models.Model):
-    _inherits = "sale.order.template"
+class SaleOrderTemplate(models.Model):
+    _inherits = "sale.order.template.line"
 
-    des_head = fields.Char(string='Header')
+    description_head = fields.Char(string='Header')
