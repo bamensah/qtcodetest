@@ -7,7 +7,7 @@
     "category": "Extra Tools",
 
     "version":"14.0.1",
-    "depends" : ["base","sales"],
+    "depends" : ["base","sale"],
     "application" : True,
     "data" : ['views/qoutation_template.xml',
     ],
