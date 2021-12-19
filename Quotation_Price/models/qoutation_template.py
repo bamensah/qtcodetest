@@ -9,4 +9,5 @@ class GetUnitPrice(models.Model):
 
 class QuotationTemplateCustom(models.Model):
     _inherit = 'custom.unit.price'
+    _inherit = 'sale.order.template.line'
     unit_price = fields.Float(string='Unit Price')
