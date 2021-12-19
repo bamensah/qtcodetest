@@ -4,6 +4,7 @@
 from odoo import fields, models
 
 class QuotationTemplateCustom(models.Model):
+    _name = 'quotation.template.custom'
     _inherits = {'sale.order.line':'price_unit'}
     _inherit = 'sale.order.template.line'
 
