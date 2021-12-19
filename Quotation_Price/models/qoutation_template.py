@@ -4,6 +4,6 @@
 from odoo import fields, models
 
 class SaleOrderTemplate(models.Model):
-    _inherit = 'sale.order.template.line'
+    _inherit = 'sale.order.template'
 
     description_head = fields.Char(string='Header')
