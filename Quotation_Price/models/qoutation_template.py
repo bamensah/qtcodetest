@@ -7,4 +7,4 @@ class QuotationTemplateCustom(models.Model):
     _inherit = 'sale.order.template.line'
     _inherit = 'sale.order'
 
-    price_unit = fields.Float('sale.order', string='Unit Price')
+    price_unit = fields.Float(string='Unit Price')
