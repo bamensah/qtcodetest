@@ -3,7 +3,10 @@
 
 from odoo import fields, models
 
-class SaleOrderTemplate(models.Model):
-    _inherit = 'sale.order.template.line'
+class GetUnitPrice(models.Model):
+    _name = 'custom.unit.price'
+    _inherits = {'sale.order':'price_unit'}
 
-    description_head = fields.Char(string='Header')
+class QuotationTemplateCustom(models.Model):
+    _inherit = 'custom.unit.price'
+    unit_price = fields.Float(string='Unit Price')
