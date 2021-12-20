@@ -10,9 +10,8 @@ class QuotationTemplateCustom(models.Model):
 
 class ModifyQuotationTemplate(models.Model):
     _inherit = "sale.order.template.line"
-    
-    quotation_template_custom_id = fields.Many2one("quotation.template.custom", string="Quotation Template Custom")
-    unit_price = quotation_template_custom_id.unit_price
+
+    unit_price = fields.Float("quotation.template.custom", string="Unit Price")
 
 class UnitPriceChange(models.Model):
     _inherit = "sale.order.line"
