@@ -11,4 +11,4 @@ class SaleOrderTemplateLine(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    price_unit = fields.Float('sale.order.template.line', 'unit_price', string='Unit Price')
+    price_unit = fields.Float('sale.order.template.line', string='Unit Price')
