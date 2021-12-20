@@ -4,10 +4,15 @@
 from odoo import api, fields, models, _
 
 class QuotationTemplateCustom(models.Model):
-    _inherit = "sale.order.template.line"
     _name = "quotation.template.custom"
 
     unit_price = fields.Float(string="Unit Price")
+
+class QuotationTemplatePrice(models.Model):
+    _inherit = "sale.order.template.line"
+    _inherit = "quotation.template.custom"
+
+    unit_price = fields.Float()   
 
 class UnitPriceChange(models.Model):
     _inherit = "sale.order.line"
