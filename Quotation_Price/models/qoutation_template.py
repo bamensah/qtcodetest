@@ -10,12 +10,12 @@ class QuotationTemplateCustom(models.Model):
 
 class UnitPriceChange(models.Model):
     _inherit = "sale.order.line"
+    _inherit = "QuotationTemplateCustom"
 
     @api.onchange('price_unit')
-    def onchange_price_unit(self):
-
-        res = super(QuotationTemplateCustom,self).onchange_price_unit()
+    def _onchange_price(self):
+        res = super(QuotationTemplateCustom, self)._onchange_price()
 
         for rec in self:
-            self.price_unit = rec.unit_price
+            rec.price_unit = unit_price
         return res
