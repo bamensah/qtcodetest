@@ -6,9 +6,9 @@ from odoo import api, fields, models, _
 class SaleOrderTemplateLine(models.Model):
     _inherit = "sale.order.template.line"
 
-    unit_price = fields.Float('Unit Price' , store=True)
+    unit_price = fields.Float('sale.order.line', string='Unit Price')
 
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    price_unit = fields.Float('Unit Price', related='product_id.unit_price', store=True)
+    price_unit = fields.Float('sale.order.template.line', 'unit_price', string='Unit Price')
