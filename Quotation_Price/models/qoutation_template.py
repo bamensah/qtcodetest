@@ -11,4 +11,8 @@ class SaleOrderTemplateLine(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    price_unit = fields.Float('sale.order.template.line', string='Unit Price')
+    @api.onchange('product_id')
+    def SetUnitPrice(self):
+        if self.product_id:
+            self.name = self.product_id.display_name
+            self.price_unit = self.product_id.unit_price
