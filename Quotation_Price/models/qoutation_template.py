@@ -11,10 +11,8 @@ class SaleOrderTemplateLine(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = "sale.order"
 
-    @api.onchange('sale_order_template_id')
-    def onchange_sale_order_template_id(self):
-        ret = super(SaleOrder, self).onchange_sale_order_template_id()
-        if self.sale_order_template_id:
-            template_price = self.sale_order_template_id.with_context(lang=self.product_id.unit_price)
-            self.price_unit = template.unit_price
-            return ret
+    @api.onchange('product_id')
+    def SetUnitPrice(self):
+        if self.product_id:
+            self.name = self.product_id.display_name
+            self.price_unit = self.product_id.unit_price
